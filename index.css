@@ -1,0 +1,7 @@
+#fps-counter {
+  text-align: right;
+  position: fixed;
+  z-index: 2000;
+  right: 40;
+  top: 3;
+}
