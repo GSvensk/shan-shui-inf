@@ -9,12 +9,12 @@
     <script src="src/polytools.js" id="PolyTools"></script>
     <script src="src/utils.js" id="Util"></script>
     <script src="src/renderEngine.js"></script>
+    <script src="src/ui.js" id="UI"></script>
     <script src="src/motive/arch.js"></script>
     <script src="src/motive/man.js"></script>
     <script src="src/motive/mountain.js"></script>
     <script src="src/motive/trees.js"></script>
     <script src="src/downloader.js" id="downloader"></script>
-    <script src="src/ui.js" id="UI"></script>
   </head>
   <body style="margin: 0;">
     <div id="fps-counter">fps: <span id="fps"></span></div>
@@ -36,16 +36,8 @@
         title="Settings"
       >
         <div style="display: table-cell; vertical-align: middle;">
-          <font id="SET_BTN.t" size="4px"> &#x2630; </font>
+          <p id="SET_BTN.t" size="4px">&#x2630;</p>
         </div>
-        <script>
-          window.addEventListener("scroll", function (e) {
-            document.getElementById("SETTING").style.left = Math.max(
-              4,
-              40 - window.scrollX
-            );
-          });
-        </script>
       </div>
       <div style="height: 4px;"></div>
       <div
@@ -79,7 +71,7 @@
                 title="view left"
                 onclick="xcroll(-parseFloat(document.getElementById('INC_STEP').value))"
               >
-                <
+                &lt;
               </button>
               <input
                 title="increment step"
@@ -145,20 +137,12 @@
       "
       onmouseover="document.getElementById('SOURCE_BTN').style.backgroundColor=btnHoverCol"
       onmouseout="document.getElementById('SOURCE_BTN').style.backgroundColor='rgba(0,0,0,0)'"
-      onclick="window.location='https://github.com/LingDong-/shan-shui-inf';"
+      onclick="window.location='https://github.com/GSvensk/shan-shui-inf/';"
       title="Fork me on Github!"
     >
       <div style="display: table-cell; vertical-align: middle;">
-        <font id="SET_BTN.t" size="4px"> &lt;/&gt; </font>
+        <p id="SET_BTN.t" size="4px">&lt;/&gt;</p>
       </div>
-      <script>
-        window.addEventListener("scroll", function (e) {
-          document.getElementById("SOURCE_BTN").style.left = Math.max(
-            41,
-            77 - window.scrollX
-          );
-        });
-      </script>
     </div>
 
     <table style="border-bottom: 1px solid rgba(0, 0, 0, 0.1);">
@@ -170,28 +154,12 @@
             onmouseout="rstyle('L',false)"
             onclick="xcroll(-200)"
           >
-            <div id="L.t"><font size="6px">&#x3008;</font></div>
-            <script>
-              rstyle("L", false);
-            </script>
+            <div id="L.t"><p size="6px">&#x3008;</p></div>
           </div>
         </td>
 
         <td>
-          <div id="BG">
-            <script>
-              MEM.lasttick = new Date().getTime();
-              document.getElementById("INP_SEED").value = SEED;
-              document
-                .getElementById("BG")
-                .setAttribute("style", "width:" + MEM.windx + "px");
-              update();
-              document.body.scrollTo(0, 0);
-              console.log(["SCROLLX", window.scrollX]);
-              present();
-              //draw();
-            </script>
-          </div>
+          <div id="BG"></div>
         </td>
 
         <td>
@@ -201,10 +169,7 @@
             onmouseout="rstyle('R',false)"
             onclick="xcroll(200)"
           >
-            <div id="R.t"><font size="6px">&#x3009;</font></div>
-            <script>
-              rstyle("R", false);
-            </script>
+            <div id="R.t"><p size="6px">&#x3009;</p></div>
           </div>
         </td>
       </tr>
@@ -212,5 +177,6 @@
     <canvas id="bgcanv" width="512" height="512" hidden> </canvas>
   </body>
   <script src="fps.js"></script>
+  <script src="src/misc.js"></script>
   <script src="index.js"></script>
 </html>
