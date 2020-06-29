@@ -545,10 +545,7 @@ function chunkrender(xmin, xmax) {
   }
 }
 
-document.addEventListener("mousemove", onMouseUpdate, false);
-document.addEventListener("mouseenter", onMouseUpdate, false);
-mouseX = 0;
-mouseY = 0;
+
 function onMouseUpdate(e) {
   mouseX = e.pageX;
   mouseY = e.pageY;
