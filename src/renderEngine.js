@@ -288,7 +288,6 @@ function mountplanner(xmin, xmax) {
         return false;
       }
     }
-    console.log("+");
     reg.push(r);
     return true;
   }
@@ -437,7 +436,7 @@ function chunkloader(xmin, xmax) {
 
   while (xmax > MEM.xmax - MEM.cwid || xmin < MEM.xmin + MEM.cwid) {
     console.log("generating new chunk...");
-
+    var then = Date.now() / 1000; // get time in seconds
     var plan;
     if (xmax > MEM.xmax - MEM.cwid) {
       plan = mountplanner(MEM.xmax, MEM.xmax + MEM.cwid);
@@ -529,6 +528,8 @@ function chunkloader(xmin, xmax) {
       //   canv:"<circle cx='"+plan[i].x+"' cy='"+plan[i].y+"' r='20' stroke='black' fill='red' />"
       // })
     }
+    var now = Date.now() / 1000; // get time in seconds
+    console.log("rendering chunk took ", now-then, " seconds")
   }
 }
 

@@ -20,4 +20,3 @@ parseArgs({
   },
 });
 Math.seed(SEED);
-console.log(Prng.seed);
