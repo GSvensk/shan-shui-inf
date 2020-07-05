@@ -1,7 +1,16 @@
+
+body {
+  margin: 0;
+}
+
 #fps-counter {
   text-align: right;
   position: fixed;
   z-index: 2000;
-  right: 40;
-  top: 3;
+  right: 40px;
+  top: 3px;
+}
+
+.padding-bottom {
+  padding-bottom: 3px;
 }
