@@ -21,3 +21,6 @@ var img = canvas.toDataURL("image/png");
 document.getElementById("BG").style.backgroundImage = "url(" + img + ")";
 document.getElementsByTagName("body")[0].style.backgroundImage =
   "url(" + img + ")";
+
+//Start scrolling immediately
+autoxcroll(parseFloat(document.getElementById("INC_STEP").value));
