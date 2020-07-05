@@ -3,18 +3,6 @@
   <head>
     <title>Shan shui</title>
     <link rel="stylesheet" type="text/css" href="index.css" />
-    <script src="src/prng.js" id="PRNG"></script>
-    <script src="src/parseArgs.js"></script>
-    <script src="src/perlinNoise.js" id="PerlinNoise"></script>
-    <script src="src/polytools.js" id="PolyTools"></script>
-    <script src="src/utils.js" id="Util"></script>
-    <script src="src/renderEngine.js"></script>
-    <script src="src/ui.js" id="UI"></script>
-    <script src="src/motive/arch.js"></script>
-    <script src="src/motive/man.js"></script>
-    <script src="src/motive/mountain.js"></script>
-    <script src="src/motive/trees.js"></script>
-    <script src="src/downloader.js" id="downloader"></script>
   </head>
   <body style="margin: 0;">
     <div id="fps-counter">fps: <span id="fps"></span></div>
@@ -36,8 +24,16 @@
         title="Settings"
       >
         <div style="display: table-cell; vertical-align: middle;">
-          <p id="SET_BTN.t" size="4px">&#x2630;</p>
+          <font id="SET_BTN.t" size="4px"> &#x2630; </font>
         </div>
+        <script>
+          window.addEventListener("scroll", function (e) {
+            document.getElementById("SETTING").style.left = Math.max(
+              4,
+              40 - window.scrollX
+            );
+          });
+        </script>
       </div>
       <div style="height: 4px;"></div>
       <div
@@ -71,7 +67,7 @@
                 title="view left"
                 onclick="xcroll(-parseFloat(document.getElementById('INC_STEP').value))"
               >
-                &lt;
+                <
               </button>
               <input
                 title="increment step"
@@ -94,7 +90,7 @@
           <tr>
             <td>
               <pre><input id = "AUTO_SCROLL" type="checkbox" 
-            onchange="autoxcroll(parseFloat(document.getElementById('INC_STEP').value))">Auto-scroll</pre>
+              onchange="autoxcroll(parseFloat(document.getElementById('INC_STEP').value))">Auto-scroll</pre>
             </td>
 
             <td></td>
@@ -175,8 +171,21 @@
       </tr>
     </table>
     <canvas id="bgcanv" width="512" height="512" hidden> </canvas>
+    
+    <script src="src/prng.js" id="PRNG"></script>
+    <script src="src/parseArgs.js"></script>
+    <script src="src/perlinNoise.js" id="PerlinNoise"></script>
+    <script src="src/polytools.js" id="PolyTools"></script>
+    <script src="src/utils.js" id="Util"></script>
+    <script src="src/renderEngine.js"></script>
+    <script src="src/ui.js" id="UI"></script>
+    <script src="src/motive/arch.js"></script>
+    <script src="src/motive/man.js"></script>
+    <script src="src/motive/mountain.js"></script>
+    <script src="src/motive/trees.js"></script>
+    <script src="src/downloader.js" id="downloader"></script>
+    <script src="fps.js"></script>
+    <script src="src/misc.js"></script>
+    <script src="index.js"></script>
   </body>
-  <script src="fps.js"></script>
-  <script src="src/misc.js"></script>
-  <script src="index.js"></script>
 </html>
