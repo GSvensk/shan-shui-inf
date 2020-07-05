@@ -4,14 +4,24 @@
     <title>Shan shui</title>
     <link rel="stylesheet" type="text/css" href="index.css" />
   </head>
-  <body style="margin: 0;">
+  <body>
     <div id="fps-counter">fps: <span id="fps"></span></div>
-    <div id="SETTING" style="position: fixed; z-index: 1000; left: 40; top: 3;">
+    <div
+      id="SETTING"
+      style="
+        position: fixed;
+        z-index: 1000;
+        left: 4px;
+        top: 4px;
+        width: 50%;
+        height: 4%;
+      "
+    >
       <div
         id="SET_BTN"
         style="
-          width: 32;
-          height: 32;
+          width: 32px;
+          height: 32px;
           color: rgba(0, 0, 0, 0.4);
           border: 1px solid rgba(0, 0, 0, 0.4);
           text-align: center;
@@ -20,11 +30,11 @@
         "
         onmouseover="document.getElementById('SET_BTN').style.backgroundColor=btnHoverCol"
         onmouseout="document.getElementById('SET_BTN').style.backgroundColor='rgba(0,0,0,0)'"
-        onclick="toggleVisible('MENU');toggleText('SET_BTN.t','&#x2630;','&#x2715;')"
+        onclick="toggleVisible('MENU');toggleText('SET_BTN.t','&#x2630;','&#x2715;');document.getElementById('SET_BTN.t').classList.toggle('padding-bottom')"
         title="Settings"
       >
         <div style="display: table-cell; vertical-align: middle;">
-          <font id="SET_BTN.t" size="4px"> &#x2630; </font>
+          <p id="SET_BTN.t" size="4px">&#x2630;</p>
         </div>
         <script>
           window.addEventListener("scroll", function (e) {
@@ -35,7 +45,6 @@
           });
         </script>
       </div>
-      <div style="height: 4px;"></div>
       <div
         id="MENU"
         style="
@@ -67,7 +76,7 @@
                 title="view left"
                 onclick="xcroll(-parseFloat(document.getElementById('INC_STEP').value))"
               >
-                <
+                &lt;
               </button>
               <input
                 title="increment step"
@@ -82,14 +91,14 @@
                 title="view right"
                 onclick="xcroll(parseFloat(document.getElementById('INC_STEP').value))"
               >
-                >
+                &gt;
               </button>
             </td>
           </tr>
 
           <tr>
             <td>
-              <pre><input id = "AUTO_SCROLL" type="checkbox" 
+              <pre><input id = "AUTO_SCROLL" type="checkbox" checked
               onchange="autoxcroll(parseFloat(document.getElementById('INC_STEP').value))">Auto-scroll</pre>
             </td>
 
@@ -121,15 +130,16 @@
       style="
         position: fixed;
         z-index: 1000;
-        left: 77;
-        top: 3;
-        width: 32;
-        height: 32;
+        left: 40px;
+        top: 4px;
+        width: 32px;
+        height: 36px;
         color: rgba(0, 0, 0, 0.4);
         border: 1px solid rgba(0, 0, 0, 0.4);
         text-align: center;
         display: table;
         cursor: pointer;
+        padding-bottom: 3px;
       "
       onmouseover="document.getElementById('SOURCE_BTN').style.backgroundColor=btnHoverCol"
       onmouseout="document.getElementById('SOURCE_BTN').style.backgroundColor='rgba(0,0,0,0)'"
@@ -171,7 +181,7 @@
       </tr>
     </table>
     <canvas id="bgcanv" width="512" height="512" hidden> </canvas>
-    
+
     <script src="src/prng.js" id="PRNG"></script>
     <script src="src/parseArgs.js"></script>
     <script src="src/perlinNoise.js" id="PerlinNoise"></script>
